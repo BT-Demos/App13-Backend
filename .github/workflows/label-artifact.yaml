@@ -1,0 +1,16 @@
+name: GHA Label artifact
+on:
+  workflow_dispatch:
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  label-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: label-artifact
+        uses: cloudbees-io-gha/label-artifact-version@v1
+        with:
+          artifact-id: 2ac03078-479f-4fbc-b8fe-d360c0f636f2
+          labels: Stable,Release candidate
+          operation: ADD
